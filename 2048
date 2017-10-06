@@ -50,9 +50,9 @@ class Frame(wx.Frame):
         ff.close()
 
     def initGame(self):
-        self.bgFont = wx.Font(50,wx.SWISS,wx.NORMAL,wx.BOLD,face=u"Roboto")
-        self.scFont = wx.Font(36,wx.SWISS,wx.NORMAL,wx.BOLD,face=u"Roboto")
-        self.smFont = wx.Font(12,wx.SWISS,wx.NORMAL,wx.NORMAL,face=u"Roboto")
+        self.bgFont = wx.Font(50,wx.SWISS,wx.NORMAL,wx.BOLD,faceName=u"Roboto")
+        self.scFont = wx.Font(36,wx.SWISS,wx.NORMAL,wx.BOLD,faceName=u"Roboto")
+        self.smFont = wx.Font(12,wx.SWISS,wx.NORMAL,wx.NORMAL,faceName=u"Roboto")
         self.curScore = 0
         self.bstScore = 0
         self.loadScore()
