@@ -13,7 +13,6 @@ class Frame(wx.Frame):
                 8:(242, 177, 121),16:(245, 149, 99),32:(246, 124, 95),
                 64:(246, 94, 59),128:(237, 207, 114),256:(237, 207, 114),
                 512:(237, 207, 114),1024:(237, 207, 114),2048:(237, 207, 114)}                
-        self.setIcon()
         self.initGame()
         panel = wx.Panel(self)
         panel.Bind(wx.EVT_KEY_DOWN,self.onKeyDown)
@@ -34,10 +33,6 @@ class Frame(wx.Frame):
         self.saveScore()
         self.Destroy()
 
-    def setIcon(self):
-        icon = wx.Icon("icon.ico",wx.BITMAP_TYPE_ICO)
-        self.SetIcon(icon)
-        
     def loadScore(self):
         if os.path.exists("bestscore.ini"):
             ff = open("bestscore.ini")
@@ -229,7 +224,7 @@ class Frame(wx.Frame):
                 dc.DrawRoundedRectangle(30+col*115,165+row*115,100,100,2)
                 size = dc.GetTextExtent(str(value))
                 while size[0]>100-15*2:
-                    self.scFont = wx.Font(self.scFont.GetPointSize()*4/5,wx.SWISS,wx.NORMAL,wx.BOLD,face=u"Roboto")
+                    self.scFont = wx.Font(self.scFont.GetPointSize()*4/5,wx.SWISS,wx.NORMAL,wx.BOLD,faceName=u"Roboto")
                     dc.SetFont(self.scFont)
                     size = dc.GetTextExtent(str(value))
                 if value!=0: dc.DrawText(str(value),30+col*115+(100-size[0])/2,165+row*115+(100-size[1])/2)
